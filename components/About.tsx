@@ -60,7 +60,7 @@ export default function About() {
             <div className="pt-2">
               <p
                 className="text-xs font-mono uppercase tracking-widest mb-3"
-                style={{ color: "var(--muted)", opacity: 0.6 }}
+                style={{ color: "var(--muted)" }}
               >
                 Certifications
               </p>
@@ -92,7 +92,7 @@ export default function About() {
           >
             <p
               className="text-xs font-mono uppercase tracking-widest mb-5"
-              style={{ color: "var(--muted)", opacity: 0.6 }}
+              style={{ color: "var(--muted)" }}
             >
               Technologies
             </p>
@@ -122,7 +122,7 @@ export default function About() {
             <div className="mt-10 pt-8" style={{ borderTop: "1px solid var(--border)" }}>
               <p
                 className="text-xs font-mono uppercase tracking-widest mb-5"
-                style={{ color: "var(--muted)", opacity: 0.6 }}
+                style={{ color: "var(--muted)" }}
               >
                 Education
               </p>

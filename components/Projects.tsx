@@ -245,7 +245,7 @@ export default function Projects() {
                     <span
                       key={t}
                       className="text-xs font-mono"
-                      style={{ color: "var(--muted)", opacity: 0.7 }}
+                      style={{ color: "var(--muted)" }}
                     >
                       {t}
                     </span>

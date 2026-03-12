@@ -21,6 +21,14 @@ function GitHubIcon() {
   );
 }
 
+function XIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  );
+}
+
 export default function Contact() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
@@ -57,12 +65,8 @@ export default function Contact() {
             className="text-base leading-[1.85] mb-10"
             style={{ color: "var(--muted)" }}
           >
-            I&apos;m currently open to{" "}
-            <span style={{ color: "var(--text)", fontWeight: 500 }}>
-              Backend / Backend-Heavy Full Stack
-            </span>{" "}
-            roles in the UK. Whether you have a question, an opportunity, or
-            just want to say hello — my inbox is always open.
+            Whether you have a question, an opportunity, or just want to say
+            hello — my inbox is always open.
           </p>
 
           <motion.a
@@ -128,7 +132,7 @@ export default function Contact() {
               <LinkedInIcon />
             </a>
             <a
-              href="https://github.com"
+              href="https://github.com/theanadimukt"
               target="_blank"
               rel="noreferrer"
               className="transition-all duration-200 hover:-translate-y-0.5"
@@ -143,10 +147,26 @@ export default function Contact() {
             >
               <GitHubIcon />
             </a>
+            <a
+              href="https://x.com/hausofsagar"
+              target="_blank"
+              rel="noreferrer"
+              className="transition-all duration-200 hover:-translate-y-0.5"
+              style={{ color: "var(--muted)" }}
+              onMouseEnter={(e) =>
+                ((e.currentTarget as HTMLElement).style.color = "var(--accent)")
+              }
+              onMouseLeave={(e) =>
+                ((e.currentTarget as HTMLElement).style.color = "var(--muted)")
+              }
+              aria-label="X"
+            >
+              <XIcon />
+            </a>
           </div>
 
-          <p className="text-xs font-mono" style={{ color: "var(--muted)", opacity: 0.5 }}>
-            Designed & Built by Sagar Patel · {new Date().getFullYear()}
+          <p className="text-xs font-mono flex items-center gap-1.5" style={{ color: "var(--muted)" }}>
+            Developed and Built by Sagar Patel
           </p>
         </motion.footer>
       </div>
