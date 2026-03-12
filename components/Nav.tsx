@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const navLinks = [
   { label: "About", num: "01", href: "#about" },
@@ -10,32 +10,25 @@ const navLinks = [
 ];
 
 export default function Nav() {
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "shadow-[0_1px_0_rgba(0,0,0,0.06)]"
-          : ""
-      }`}
-      style={{
-        backdropFilter: scrolled ? "blur(16px)" : "none",
-        backgroundColor: scrolled ? "rgba(250,249,247,0.85)" : "transparent",
-      }}
-    >
-      <nav className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+    <div className="fixed top-4 left-0 right-0 z-50 flex flex-col items-center px-4">
+      {/* Island nav */}
+      <nav
+        className="w-full max-w-4xl flex items-center justify-between px-7 h-14 rounded-full"
+        style={{
+          backgroundColor: "rgba(33, 37, 37, 0.95)",
+          border: "1px solid rgba(255, 255, 255, 0.12)",
+          backdropFilter: "blur(24px)",
+          WebkitBackdropFilter: "blur(24px)",
+          boxShadow: "0 4px 24px rgba(0, 0, 0, 0.4)",
+        }}
+      >
         {/* Logo */}
         <a
           href="#"
-          className="text-2xl font-bold leading-none transition-opacity hover:opacity-70"
+          className="text-lg font-bold leading-none transition-opacity hover:opacity-70 shrink-0"
           style={{
             fontFamily: "var(--font-fraunces)",
             fontStyle: "italic",
@@ -46,87 +39,79 @@ export default function Nav() {
         </a>
 
         {/* Desktop links */}
-        <ul className="hidden md:flex items-center gap-6">
+        <ul className="hidden md:flex items-center gap-5">
           {navLinks.map(({ label, num, href }) => (
             <li key={label}>
               <a
                 href={href}
-                className="group flex items-baseline gap-1.5 text-sm font-medium transition-colors duration-200"
-                style={{ color: "var(--muted)" }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.color = "var(--text)")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.color = "var(--muted)")
-                }
+                className="text-secondary flex items-baseline gap-1 text-sm font-medium transition-colors duration-200"
               >
-                <span
-                  className="text-xs font-mono"
-                  style={{ color: "var(--accent)" }}
-                >
+                <span className="text-xs font-mono" style={{ color: "var(--accent)" }}>
                   {num}.
                 </span>
                 {label}
               </a>
             </li>
           ))}
-          <li>
-            <a
-              href="mailto:sagarpatel.web@gmail.com"
-              className="ml-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200"
-              style={{
-                border: "1.5px solid var(--accent)",
-                color: "var(--accent)",
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.backgroundColor =
-                  "var(--accent)";
-                (e.currentTarget as HTMLElement).style.color = "white";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.backgroundColor =
-                  "transparent";
-                (e.currentTarget as HTMLElement).style.color = "var(--accent)";
-              }}
-            >
-              Say hello
-            </a>
-          </li>
         </ul>
 
-        {/* Mobile hamburger */}
-        <button
-          className="md:hidden flex flex-col justify-center gap-[5px] p-2 -mr-2"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-        >
-          <span
-            className={`block h-[1.5px] bg-[var(--text)] transition-all duration-300 origin-center ${
-              menuOpen ? "w-5 rotate-45 translate-y-[6.5px]" : "w-5"
-            }`}
-          />
-          <span
-            className={`block h-[1.5px] bg-[var(--text)] transition-all duration-200 ${
-              menuOpen ? "w-0 opacity-0" : "w-4"
-            }`}
-          />
-          <span
-            className={`block h-[1.5px] bg-[var(--text)] transition-all duration-300 origin-center ${
-              menuOpen ? "w-5 -rotate-45 -translate-y-[6.5px]" : "w-5"
-            }`}
-          />
-        </button>
+        {/* CTA + mobile hamburger */}
+        <div className="flex items-center gap-3">
+          <a
+            href="mailto:sagarpatel.web@gmail.com"
+            className="hidden md:inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200"
+            style={{
+              border: "1px solid var(--accent)",
+              color: "var(--accent)",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.backgroundColor = "var(--accent)";
+              (e.currentTarget as HTMLElement).style.color = "#0a0a0a";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.backgroundColor = "transparent";
+              (e.currentTarget as HTMLElement).style.color = "var(--accent)";
+            }}
+          >
+            Say hello
+          </a>
+
+          {/* Mobile hamburger */}
+          <button
+            className="md:hidden flex flex-col justify-center gap-[5px] p-1"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span
+              className={`block h-[1.5px] bg-[var(--text)] transition-all duration-300 origin-center ${
+                menuOpen ? "w-5 rotate-45 translate-y-[6.5px]" : "w-5"
+              }`}
+            />
+            <span
+              className={`block h-[1.5px] bg-[var(--text)] transition-all duration-200 ${
+                menuOpen ? "w-0 opacity-0" : "w-4"
+              }`}
+            />
+            <span
+              className={`block h-[1.5px] bg-[var(--text)] transition-all duration-300 origin-center ${
+                menuOpen ? "w-5 -rotate-45 -translate-y-[6.5px]" : "w-5"
+              }`}
+            />
+          </button>
+        </div>
       </nav>
 
-      {/* Mobile menu */}
+      {/* Mobile dropdown */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ${
+        className={`md:hidden w-full max-w-3xl mt-2 overflow-hidden transition-all duration-300 rounded-2xl ${
           menuOpen ? "max-h-72 opacity-100" : "max-h-0 opacity-0"
         }`}
         style={{
-          backdropFilter: "blur(16px)",
-          backgroundColor: "rgba(250,249,247,0.95)",
-          borderTop: "1px solid rgba(0,0,0,0.06)",
+          backgroundColor: "rgba(33, 37, 37, 0.98)",
+          border: menuOpen ? "1px solid rgba(255,255,255,0.12)" : "none",
+          backdropFilter: "blur(24px)",
+          WebkitBackdropFilter: "blur(24px)",
+          boxShadow: menuOpen ? "0 4px 24px rgba(0,0,0,0.4)" : "none",
         }}
       >
         <ul className="px-6 py-6 flex flex-col gap-5">
@@ -138,10 +123,7 @@ export default function Nav() {
                 style={{ color: "var(--muted)" }}
                 onClick={() => setMenuOpen(false)}
               >
-                <span
-                  className="text-xs font-mono"
-                  style={{ color: "var(--accent)" }}
-                >
+                <span className="text-xs font-mono" style={{ color: "var(--accent)" }}>
                   {num}.
                 </span>
                 {label}
@@ -152,10 +134,7 @@ export default function Nav() {
             <a
               href="mailto:sagarpatel.web@gmail.com"
               className="inline-block px-5 py-2.5 rounded-full text-sm font-medium"
-              style={{
-                border: "1.5px solid var(--accent)",
-                color: "var(--accent)",
-              }}
+              style={{ border: "1px solid var(--accent)", color: "var(--accent)" }}
               onClick={() => setMenuOpen(false)}
             >
               Say hello
@@ -163,6 +142,6 @@ export default function Nav() {
           </li>
         </ul>
       </div>
-    </header>
+    </div>
   );
 }

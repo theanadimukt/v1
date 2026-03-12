@@ -72,14 +72,13 @@ export default function Hero() {
           <a
             href="#projects"
             className="group inline-flex items-center gap-2 px-7 py-3.5 text-sm font-semibold rounded-full transition-all duration-300"
-            style={{ backgroundColor: "var(--text)", color: "white" }}
+            style={{ backgroundColor: "var(--accent)", color: "#0a0a0a" }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.backgroundColor =
-                "var(--accent)";
+              (e.currentTarget as HTMLElement).style.backgroundColor = "#86efac";
             }}
             onMouseLeave={(e) => {
               (e.currentTarget as HTMLElement).style.backgroundColor =
-                "var(--text)";
+                "var(--accent)";
             }}
           >
             View my work
@@ -101,23 +100,23 @@ export default function Hero() {
             href="#contact"
             className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-semibold rounded-full transition-all duration-300"
             style={{
-              border: "1.5px solid rgba(17,17,17,0.2)",
+              border: "1.5px solid rgba(255,255,255,0.15)",
               color: "var(--text)",
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.borderColor = "var(--accent)";
+              (e.currentTarget as HTMLElement).style.borderColor =
+                "var(--accent)";
               (e.currentTarget as HTMLElement).style.color = "var(--accent)";
             }}
             onMouseLeave={(e) => {
               (e.currentTarget as HTMLElement).style.borderColor =
-                "rgba(17,17,17,0.2)";
+                "rgba(255,255,255,0.15)";
               (e.currentTarget as HTMLElement).style.color = "var(--text)";
             }}
           >
             Get in touch
           </a>
         </motion.div>
-
       </div>
     </section>
   );

@@ -77,7 +77,7 @@ export default function Contact() {
             onMouseEnter={(e) => {
               (e.currentTarget as HTMLElement).style.backgroundColor =
                 "var(--accent)";
-              (e.currentTarget as HTMLElement).style.color = "white";
+              (e.currentTarget as HTMLElement).style.color = "#0a0a0a";
             }}
             onMouseLeave={(e) => {
               (e.currentTarget as HTMLElement).style.backgroundColor =

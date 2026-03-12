@@ -82,7 +82,7 @@ export default function Experience() {
                       <span
                         className="px-2 py-0.5 rounded-full text-xs font-medium"
                         style={{
-                          backgroundColor: "rgba(212,118,59,0.1)",
+                          backgroundColor: "rgba(74,222,128,0.08)",
                           color: "var(--accent)",
                         }}
                       >
@@ -112,7 +112,7 @@ export default function Experience() {
                       key={t}
                       className="px-2.5 py-1 text-xs font-mono rounded"
                       style={{
-                        backgroundColor: "rgba(212,118,59,0.07)",
+                        backgroundColor: "rgba(74,222,128,0.07)",
                         color: "var(--accent)",
                       }}
                     >

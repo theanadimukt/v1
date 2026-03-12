@@ -74,9 +74,9 @@ export default function Projects() {
                 style={{
                   background:
                     i === 0
-                      ? "linear-gradient(135deg, rgba(212,118,59,0.12) 0%, rgba(212,118,59,0.04) 100%)"
-                      : "linear-gradient(135deg, rgba(123,140,222,0.12) 0%, rgba(123,140,222,0.04) 100%)",
-                  border: "1px solid rgba(0,0,0,0.06)",
+                      ? "linear-gradient(135deg, rgba(74,222,128,0.08) 0%, rgba(74,222,128,0.02) 100%)"
+                      : "linear-gradient(135deg, rgba(74,222,128,0.05) 0%, rgba(167,139,250,0.04) 100%)",
+                  border: "1px solid rgba(255,255,255,0.07)",
                 }}
               >
                 {/* Tag */}
@@ -86,8 +86,8 @@ export default function Projects() {
                     style={{
                       backgroundColor:
                         i === 0
-                          ? "rgba(212,118,59,0.12)"
-                          : "rgba(123,140,222,0.12)",
+                          ? "rgba(74,222,128,0.1)"
+                          : "rgba(167,139,250,0.1)",
                       color: i === 0 ? "var(--accent)" : "var(--accent-blue)",
                     }}
                   >
@@ -99,7 +99,7 @@ export default function Projects() {
                   className="absolute inset-0"
                   style={{
                     backgroundImage:
-                      "linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px)",
+                      "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)",
                     backgroundSize: "32px 32px",
                   }}
                 />
@@ -110,8 +110,8 @@ export default function Projects() {
                     style={{
                       backgroundColor:
                         i === 0
-                          ? "rgba(212,118,59,0.1)"
-                          : "rgba(123,140,222,0.1)",
+                          ? "rgba(74,222,128,0.08)"
+                          : "rgba(167,139,250,0.08)",
                     }}
                   >
                     <svg
@@ -162,8 +162,8 @@ export default function Projects() {
                 <div
                   className="p-5 rounded-xl mb-5 text-sm leading-[1.85]"
                   style={{
-                    backgroundColor: "rgba(0,0,0,0.025)",
-                    border: "1px solid rgba(0,0,0,0.05)",
+                    backgroundColor: "rgba(255,255,255,0.03)",
+                    border: "1px solid rgba(255,255,255,0.06)",
                     color: "var(--muted)",
                   }}
                 >
@@ -210,8 +210,8 @@ export default function Projects() {
                 transition={{ duration: 0.5, delay: 0.35 + i * 0.08, ease }}
                 className="project-card p-6 rounded-2xl flex flex-col"
                 style={{
-                  backgroundColor: "rgba(255,255,255,0.6)",
-                  border: "1px solid rgba(0,0,0,0.07)",
+                  backgroundColor: "rgba(255,255,255,0.03)",
+                  border: "1px solid rgba(255,255,255,0.07)",
                 }}
               >
                 <div className="flex items-start justify-between mb-6">
